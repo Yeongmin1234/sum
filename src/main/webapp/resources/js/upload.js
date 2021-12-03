@@ -20,8 +20,8 @@ $(document).ready(function(e){
     	  str+="<input type='text' name='attachList["+i+"].uploadpath' value='"+jobj.data("path")+"'>"
     	  str+="<input type='text' name='attachList["+i+"].filetype' value='"+jobj.data("type")+"'>"
       })
-//      formObj.append(str).submit();
-      formObj.append(str);
+      formObj.append(str).submit();
+//      formObj.append(str);
    })// $("button[type='submit']") 끝
    
                      // 정규식
@@ -78,10 +78,13 @@ $(document).ready(function(e){
       }); //$.ajax
       
    }); //$("input[type='file']").change(function(e) { 이벤트 끝
-   $(".ucBtn").click(function(){
-	   $(".uploadDiv").find("input[type='file']").val(null);
-	   $(".uploadResult ul").html("");
-   })
+//   $(".ucBtn").click(function(){
+//	   $(".uploadDiv").find("input[type='file']").val(null);
+//	   $(".uploadResult ul").html("");
+//   })
+   $("#Btn").click(function(){
+		$(this).closet('li').remove();
+	})
    function showUploadResult(uploadResultArr){
     
          if(!uploadResultArr || uploadResultArr.length==0){
@@ -98,11 +101,12 @@ $(document).ready(function(e){
                var fileCallPath =  encodeURIComponent( obj.uploadPath+ "/s_"+obj.uuid +"_"+obj.fileName);
                str += "<li data-path='"+obj.uploadPath+"'";
                str +=" data-uuid='"+obj.uuid+"' data-filename='"+obj.fileName+"' data-type='"+obj.image+"'"
-               str +" ><div>";
+               str +=" ><div>";
                str += "<span> "+ obj.fileName+"</span>";
-               str += "<br>";
+               str += "<button type='button' id='Btn'"
+               str += ">X</button><br>";
                str += "</div>";
-               str +"</li>";
+               str +="</li>";
             }else{ 
                var fileCallPath =  encodeURIComponent( obj.uploadpath+"/"+ obj.uuid +"_"+obj.fileName);               
                 var fileLink = fileCallPath.replace(new RegExp(/\\/g),"/");
@@ -110,11 +114,10 @@ $(document).ready(function(e){
                str += "<li "
                str += "data-path='"+obj.uploadPath+"' data-uuid='"+obj.uuid+"' data-filename='"+obj.fileName+"' data-type='"+obj.image+"' ><div>";
                str += "<span> "+ obj.fileName+"</span>";
-               str += "<button type='button' data-file=\'"+fileCallPath+"\' data-type='file' " 
-               str += "><i class='fa fa-times'>X</i></button><br>";
-               str += "</a>";
+               str += "<button type='button' id='Btn'"
+               str += ">X</button><br>";
                str += "</div>";
-               str +"</li>";
+               str +="</li>";
             }
            
          });

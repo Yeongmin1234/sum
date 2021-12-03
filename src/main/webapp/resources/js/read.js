@@ -11,7 +11,6 @@ $(document).ready(function(){
 		$(arr).each(function(i,attach){
 			console.log(attach.filetype=="true");
 			if(attach.filetype=="true"){// 이미지 파일이면,
-			 	alret("aaa");
 				//var fileCallPath =  encodeURIComponent( attach.uploadpath+ "/s_"+attach.uuid +"_"+attach.filename);
 				str +="<li data-path='"+attach.uploadpath+"'";
 				str +=" data-uuid='"+attach.uuid+"' data-filename='"+attach.filename+"' data-type='"+attach.filetype+"'>"

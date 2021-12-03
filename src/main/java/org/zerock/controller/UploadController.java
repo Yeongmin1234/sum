@@ -121,8 +121,8 @@ public class UploadController {
 		
 //		String uploadFolder = "/resources";
 //		String uploadFolderPath = "/img/";
-		String uploadFolder = "C:\\kym\\eclipse\\workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\board-sub\\resources\\";
-		String uploadFolderPath = "/img";
+		String uploadFolder = "C:\\kym\\eclipse\\workspace\\board-sub\\src\\main\\webapp\\resources";
+		String uploadFolderPath = "\\img";
 							
 		log.info("getFolder : "+uploadFolder+uploadFolderPath);
 		// make folder --------

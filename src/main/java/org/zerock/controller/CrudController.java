@@ -86,7 +86,7 @@ public class CrudController {
 
 		attachList.forEach(attach -> {
 			try {
-				Path file = Paths.get("C:\\upload\\"+attach.getUploadpath()+"\\"+
+				Path file = Paths.get("C:\\kym\\eclipse\\workspace\\board-sub\\src\\main\\webapp\\resources"+attach.getUploadpath()+"\\"+
 			attach.getUuid()+"\\"+"_"+attach.getFilename());
 				Files.deleteIfExists(file);
 				
